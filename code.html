@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Momentum | Stay Disciplined</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Geist:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-bright": "#f8f9ff",
+                    "outline-variant": "#c7c4d8",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#ffd4a4",
+                    "inverse-primary": "#c3c0ff",
+                    "on-secondary-fixed": "#002113",
+                    "outline": "#777587",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-background": "#151c25",
+                    "secondary-container": "#6cf8bb",
+                    "tertiary": "#684000",
+                    "surface-container-high": "#e2e8f5",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d4dae7",
+                    "surface-container-low": "#eef4ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#3525cd",
+                    "on-primary-container": "#dad7ff",
+                    "secondary": "#006c49",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#4d44e3",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-variant": "#dce3f0",
+                    "on-surface": "#151c25",
+                    "on-primary-fixed": "#0f0069",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-highest": "#dce3f0",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e7eefb",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#464555",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-on-surface": "#eaf1fe",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "primary-container": "#4f46e5",
+                    "tertiary-container": "#885500",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#00714d",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2a313b",
+                    "primary-fixed": "#e2dfff",
+                    "secondary-fixed-dim": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "edge-margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "section-gap": "48px",
+                    "edge-margin-mobile": "16px",
+                    "stack-gap": "12px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Geist"],
+                    "mono": ["Geist"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f8f9ff; color: #151c25; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dce3f0; border-radius: 10px; }
+        .heatmap-cell { width: 12px; height: 12px; border-radius: 2px; }
+        .progress-ring-circle { transition: stroke-dashoffset 0.35s; transform: rotate(-90deg); transform-origin: 50% 50%; }
+        .tab-active { color: #3525cd; font-weight: 700; border-right: 2px solid #3525cd; }
+    </style>
+</head>
+<body class="font-body-lg text-body-lg selection:bg-primary-fixed-dim">
+<!-- Desktop Sidebar -->
+<aside class="fixed left-0 top-0 h-full hidden md:flex flex-col p-4 gap-stack-gap border-r border-outline-variant/20 bg-surface-container w-64 z-50">
+<div class="px-4 py-6">
+<h1 class="font-headline-md text-headline-md font-black text-primary mb-1">Momentum</h1>
+<p class="font-label-caps text-label-caps text-outline uppercase">Stay disciplined</p>
+</div>
+<nav class="flex-1 space-y-2 mt-4">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-2 border-primary hover:bg-surface-container-high transition-colors duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label-caps text-label-caps">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-caps text-label-caps">Journal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-caps text-label-caps">Goals</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span class="font-label-caps text-label-caps">Pomodoro</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-surface-container-high rounded-xl border border-outline-variant/30">
+<div class="flex items-center gap-3 mb-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional studio portrait of a young South Asian man with a friendly expression, soft cinematic lighting, clean minimalist background, high-end photography style, consistent with a modern tech professional identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClu0idlxe0INY_tR0ntThZ9QPjDYUYj23lTy1M0Qmm6ht7995maGsoGlMTbCzXa3kOy2-jhZj8mpFcwRCB14pltmx2TR31K2k-mbRKoMR4gz09aY68UXIBBh5Rrr7h8SK9T2AkpCL6jDh5zzg-iy09JvNGAvfeTT9GI1c4uhdTHWu32yZp4Rv0Iyy5IbZvUjWiF4GchieivrvhmImZIeSkA8NtxXkGEC8tfUPJ4ygHsF2phD2nDcN8mlJJsQ9FoewqLZWXqkAjxIro"/>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface">Shubham</p>
+<p class="text-[10px] text-outline">Level 12 Architect</p>
+</div>
+</div>
+<button class="w-full py-2 bg-primary text-white rounded-lg font-label-caps text-label-caps hover:bg-primary-container transition-all active:scale-95">
+                Log Out
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-8">
+<!-- Top App Bar (Mobile + Search) -->
+<header class="sticky top-0 z-40 flex justify-between items-center w-full px-edge-margin-mobile md:px-edge-margin-desktop py-3 bg-surface/80 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+</div>
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-outline">
+<span class="material-symbols-outlined text-body-lg" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-body-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search habits..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop pt-8">
+<!-- Welcome Header -->
+<section class="mb-section-gap">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="font-label-caps text-label-caps text-primary mb-1">MONDAY, OCTOBER 23</p>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Good Morning, Shubham 👋</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic mt-2">"Discipline is the bridge between goals and accomplishment."</p>
+</div>
+<button class="bg-primary text-white flex items-center gap-2 px-6 py-3 rounded-xl font-label-caps text-label-caps shadow-sm hover:shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-body-lg" data-icon="add">add</span>
+                        Add Habit
+                    </button>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between h-32 group hover:border-primary-fixed-dim transition-all">
+<div class="flex justify-between items-start">
+<p class="font-label-caps text-label-caps text-outline">Current Streak</p>
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-on-surface">14</span>
+<span class="text-body-sm text-outline">days</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between h-32 group hover:border-primary-fixed-dim transition-all">
+<div class="flex justify-between items-start">
+<p class="font-label-caps text-label-caps text-outline">XP / Level</p>
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="text-3xl font-black text-on-surface">2,450</span>
+<span class="text-body-sm text-outline">XP</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col justify-between h-32 group hover:border-primary-fixed-dim transition-all">
+<div class="flex justify-between items-start">
+<p class="font-label-caps text-label-caps text-outline">Completion Rate</p>
+<span class="material-symbols-outlined text-tertiary-container" data-icon="donut_large">donut_large</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-on-surface">88</span>
+<span class="text-body-sm text-outline">%</span>
+</div>
+</div>
+</section>
+<!-- Dashboard Layout: Habits & Widgets -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Habits Column -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Today's Habits -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Today's Focus</h3>
+<button class="text-primary font-label-caps text-label-caps hover:underline">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Habit Card 1 -->
+<div class="bg-white border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between hover:border-primary transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                        🌅
+                                    </div>
+<div>
+<p class="font-headline-md text-[16px] font-bold text-on-surface">Wake up at 5:00 AM</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 bg-surface-container-high text-outline font-label-caps text-[10px] rounded uppercase">Health</span>
+<span class="text-[11px] text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                                12d
+                                            </span>
+</div>
+</div>
+</div>
+<input class="w-7 h-7 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<!-- Habit Card 2 -->
+<div class="bg-white border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between hover:border-primary transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                        💧
+                                    </div>
+<div>
+<p class="font-headline-md text-[16px] font-bold text-on-surface">Drink 4L Water</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 bg-surface-container-high text-outline font-label-caps text-[10px] rounded uppercase">Health</span>
+<span class="text-[11px] text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                                28d
+                                            </span>
+</div>
+</div>
+</div>
+<input checked="" class="w-7 h-7 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<!-- Habit Card 3 -->
+<div class="bg-white border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between hover:border-primary transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-container/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                        🏋️
+                                    </div>
+<div>
+<p class="font-headline-md text-[16px] font-bold text-on-surface">Gym Session</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 bg-surface-container-high text-outline font-label-caps text-[10px] rounded uppercase">Fitness</span>
+<span class="text-[11px] text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                                5d
+                                            </span>
+</div>
+</div>
+</div>
+<input class="w-7 h-7 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<!-- Habit Card 4 -->
+<div class="bg-white border border-outline-variant/30 p-4 rounded-xl flex items-center justify-between hover:border-primary transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                        🧘
+                                    </div>
+<div>
+<p class="font-headline-md text-[16px] font-bold text-on-surface">10m Meditation</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 bg-surface-container-high text-outline font-label-caps text-[10px] rounded uppercase">Mind</span>
+<span class="text-[11px] text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                                                14d
+                                            </span>
+</div>
+</div>
+</div>
+<input checked="" class="w-7 h-7 rounded-lg border-2 border-outline-variant text-primary focus:ring-primary focus:ring-offset-2 transition-all cursor-pointer" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Contribution Heatmap -->
+<div class="bg-white border border-outline-variant/30 p-6 rounded-xl overflow-hidden">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Consistency Map</h3>
+<div class="flex items-center gap-2 text-[10px] font-label-caps text-outline">
+<span>Less</span>
+<div class="heatmap-cell bg-surface-container-high"></div>
+<div class="heatmap-cell bg-primary/20"></div>
+<div class="heatmap-cell bg-primary/50"></div>
+<div class="heatmap-cell bg-primary"></div>
+<span>More</span>
+</div>
+</div>
+<div class="flex gap-1 overflow-x-auto pb-4 custom-scrollbar">
+<!-- Loop for heatmap weeks (simulated) -->
+<div class="flex flex-col gap-1 shrink-0">
+<div class="heatmap-cell bg-primary"></div>
+<div class="heatmap-cell bg-primary/50"></div>
+<div class="heatmap-cell bg-surface-container-high"></div>
+<div class="heatmap-cell bg-primary"></div>
+<div class="heatmap-cell bg-primary/20"></div>
+<div class="heatmap-cell bg-primary/50"></div>
+<div class="heatmap-cell bg-primary"></div>
+</div>
+<!-- Repeat weeks -->
+<script>
+                                for(let i=0; i<24; i++){
+                                    const intensities = ['bg-surface-container-high', 'bg-primary/20', 'bg-primary/50', 'bg-primary'];
+                                    document.currentScript.insertAdjacentHTML('beforebegin', `
+                                        <div class="flex flex-col gap-1 shrink-0">
+                                            ${[1,2,3,4,5,6,7].map(() => `<div class="heatmap-cell ${intensities[Math.floor(Math.random()*4)]}"></div>`).join('')}
+                                        </div>
+                                    `);
+                                }
+                            </script>
+</div>
+</div>
+</div>
+<!-- Sidebar Widgets Column -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Pomodoro Timer -->
+<div class="glass-card p-6 rounded-xl relative overflow-hidden">
+<h4 class="font-label-caps text-label-caps text-primary mb-4">Deep Focus</h4>
+<div class="flex flex-col items-center justify-center py-4">
+<div class="text-5xl font-black text-on-surface mb-6 tracking-tighter">24:59</div>
+<div class="flex gap-3">
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-outline rounded-full hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 flex justify-between items-center text-body-sm text-on-surface-variant">
+<span>Target: 4 sessions</span>
+<span class="font-bold">2/4</span>
+</div>
+</div>
+<!-- Water Intake -->
+<div class="glass-card p-6 rounded-xl">
+<div class="flex justify-between items-start mb-6">
+<h4 class="font-label-caps text-label-caps text-secondary">Hydration</h4>
+<span class="text-secondary font-bold">2.4L / 4L</span>
+</div>
+<div class="flex justify-center mb-6 relative">
+<svg class="w-32 h-32">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary progress-ring-circle" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="145.7" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="font-bold text-lg">60%</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 border border-outline-variant rounded-lg text-[12px] font-bold hover:bg-secondary/10 hover:border-secondary transition-all">+ 250ml</button>
+<button class="flex-1 py-2 border border-outline-variant rounded-lg text-[12px] font-bold hover:bg-secondary/10 hover:border-secondary transition-all">+ 500ml</button>
+</div>
+</div>
+<!-- AI Coach Widget -->
+<div class="bg-primary p-6 rounded-xl text-white relative overflow-hidden group">
+
+<div class="relative z-10">
+<h4 class="font-label-caps text-label-caps text-primary-fixed-dim mb-2 uppercase">Momentum AI</h4>
+<p class="font-body-sm text-body-sm leading-relaxed mb-4">You're on a 14-day streak for waking up early. Analysis shows you're most productive between 8 AM and 11 AM.</p>
+<button class="text-[12px] font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                View full report <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe md:hidden bg-surface/80 backdrop-blur-xl border-t border-outline-variant/20 shadow-sm">
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-xl px-3 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-[10px] uppercase">Today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-caps text-[10px] uppercase">Trends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-caps text-[10px] uppercase">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="font-label-caps text-[10px] uppercase">Focus</span>
+</a>
+</nav>
+<!-- Floating Action Button (Mobile) -->
+<button class="md:hidden fixed right-6 bottom-20 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<script>
+        // Simple micro-interaction for checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const card = this.closest('.bg-white');
+                if(this.checked) {
+                    card.style.opacity = '0.7';
+                    card.classList.add('bg-surface-container-low');
+                } else {
+                    card.style.opacity = '1';
+                    card.classList.remove('bg-surface-container-low');
+                }
+            });
+        });
+
+        // Pomodoro Timer Logic (Simple visual)
+        let seconds = 1499;
+        const timerDisplay = document.querySelector('.tracking-tighter');
+        setInterval(() => {
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            timerDisplay.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+            if(seconds > 0) seconds--;
+        }, 1000);
+    </script>
+</body></html>
